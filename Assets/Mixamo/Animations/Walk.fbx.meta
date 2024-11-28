@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81c24c77565a94ddcbdd8dc7f52bacb5
+guid: cd647d1324e50e33985984b05faad4a4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,9 +33,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Standard Walk
-      takeName: Game_engine|Game_engine|mixamo.com|Layer0
-      internalID: -8935231115497391400
+      name: Walk
+      takeName: Game_engine|Walk
+      internalID: 3298213036422841185
       firstFrame: 0
       lastFrame: 70
       wrapMode: 0
@@ -528,19 +528,24 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Standard Walk(Clone)
+    - name: Walk(Clone)
       parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Game_engine
+      parentName: Walk(Clone)
       position: {x: -0.10525643, y: -0.05687561, z: 1.0394341}
       rotation: {x: -0.029308954, y: -0.02815201, z: -0.0020932509, w: 0.9991717}
       scale: {x: 10, y: 10, z: 10}
     - name: Root
-      parentName: Standard Walk(Clone)
+      parentName: Game_engine
       position: {x: -0, y: 0.0022750853, z: -0.078994036}
       rotation: {x: -0.49999994, y: 0.50000006, z: 0.5, w: -0.49999997}
       scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
     - name: pelvis
       parentName: Root
-      position: {x: -0.76581764, y: 0.028724726, z: 0.000057658173}
+      position: {x: -0.7658177, y: 0.028724726, z: 0.000057658173}
       rotation: {x: 0.57510966, y: -0.41139874, z: -0.57510954, w: -0.4113988}
       scale: {x: 1, y: 1, z: 1}
     - name: spine_01
@@ -841,7 +846,7 @@ ModelImporter:
     - name: thigh_r
       parentName: pelvis
       position: {x: 0.10149785, y: 0.000046636615, z: -0.010653922}
-      rotation: {x: 0.9464857, y: 0.02813673, z: -0.2938669, w: -0.13044323}
+      rotation: {x: 0.9464857, y: 0.028136693, z: -0.29386693, w: -0.13044338}
       scale: {x: 0.9999998, y: 1.0000001, z: 1.0000058}
     - name: calf_r
       parentName: thigh_r
@@ -863,6 +868,51 @@ ModelImporter:
       position: {x: -0, y: 0.12884255, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
+    - name: afro01Mesh
+      parentName: Walk(Clone)
+      position: {x: -0.6692082, y: -0.12287673, z: 1.06276}
+      rotation: {x: 0.69722307, y: -0.052448623, z: 0.025463367, w: 0.7144794}
+      scale: {x: 9.999998, y: 10, z: 9.999999}
+    - name: eyelashes01Mesh
+      parentName: Walk(Clone)
+      position: {x: -0.6692082, y: -0.12287673, z: 1.06276}
+      rotation: {x: 0.69722307, y: -0.052448623, z: 0.025463367, w: 0.7144794}
+      scale: {x: 9.999998, y: 10, z: 9.999999}
+    - name: tongue01Mesh
+      parentName: Walk(Clone)
+      position: {x: -0.6692082, y: -0.12287673, z: 1.06276}
+      rotation: {x: 0.69722307, y: -0.052448623, z: 0.025463367, w: 0.7144794}
+      scale: {x: 9.999998, y: 10, z: 9.999999}
+    - name: shoes03Mesh
+      parentName: Walk(Clone)
+      position: {x: -0.66920835, y: -0.12287671, z: 1.0627605}
+      rotation: {x: 0.69722307, y: -0.05244862, z: 0.025463369, w: 0.7144794}
+      scale: {x: 9.999998, y: 9.999999, z: 9.999999}
+    - name: male_genericMesh
+      parentName: Walk(Clone)
+      position: {x: -0.6692085, y: -0.122876845, z: 1.0627607}
+      rotation: {x: 0.69722307, y: -0.05244862, z: 0.025463363, w: 0.7144794}
+      scale: {x: 9.999998, y: 10, z: 9.999999}
+    - name: high-polyMesh
+      parentName: Walk(Clone)
+      position: {x: -0.6692082, y: -0.12287673, z: 1.06276}
+      rotation: {x: 0.69722307, y: -0.052448623, z: 0.025463367, w: 0.7144794}
+      scale: {x: 9.999998, y: 10, z: 9.999999}
+    - name: male_elegantsuit01Mesh
+      parentName: Walk(Clone)
+      position: {x: -0.669208, y: -0.12287666, z: 1.0627605}
+      rotation: {x: 0.69722307, y: -0.052448653, z: 0.025463378, w: 0.7144793}
+      scale: {x: 9.999998, y: 10, z: 9.999999}
+    - name: eyebrow009Mesh
+      parentName: Walk(Clone)
+      position: {x: -0.6692082, y: -0.12287673, z: 1.06276}
+      rotation: {x: 0.69722307, y: -0.052448623, z: 0.025463367, w: 0.7144794}
+      scale: {x: 9.999998, y: 10, z: 9.999999}
+    - name: teeth_shape05Mesh
+      parentName: Walk(Clone)
+      position: {x: -0.6692082, y: -0.12287673, z: 1.06276}
+      rotation: {x: 0.69722307, y: -0.052448623, z: 0.025463367, w: 0.7144794}
+      scale: {x: 9.999998, y: 10, z: 9.999999}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -873,7 +923,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
