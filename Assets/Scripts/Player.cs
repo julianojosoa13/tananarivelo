@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float turnRate = 7f;
     [SerializeField] private Camera mainCamera; // Reference to the camera
+
+    private void Start()
+    {
+        Debug.Log("Animator is ", animator);
+    }
+
 
     private void Update()
     {
@@ -30,6 +37,15 @@ public class Player : MonoBehaviour
         }
 
         inputVector = inputVector.normalized;
+
+        if (inputVector != Vector2.zero)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
 
         // Get the forward and right directions relative to the camera
         Vector3 cameraForward = mainCamera.transform.forward;

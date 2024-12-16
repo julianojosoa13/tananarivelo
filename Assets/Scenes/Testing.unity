@@ -519,6 +519,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4289923236819657677}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &653414283 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 798830065531365217, guid: 0497e3e25436bf787ae19c4341ef63c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4289923236819657677}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &778847301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -780,7 +786,7 @@ Transform:
   m_GameObject: {fileID: 836587194}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56974125, y: 2.9805427, z: -2.338153}
+  m_LocalPosition: {x: 0.56974125, y: 2.71, z: -2.338153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -799,8 +805,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b463221936a9199438286a62349c4920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  turnRate: 5
+  animator: {fileID: 653414283}
+  moveSpeed: 6.5
+  turnRate: 3.5
   mainCamera: {fileID: 330585545}
 --- !u!1001 &843168369
 PrefabInstance:
