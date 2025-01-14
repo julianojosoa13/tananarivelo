@@ -23,7 +23,6 @@ public class EnterChurch : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-
         gameManager.EnterBuilding("ChurchInterior", exitPos);
     }
 }
