@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -30,6 +31,15 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject churchInterior;
 
+    [SerializeField] private GameObject questUpdates;
+
+    [SerializeField] private TMP_Text questText;
+
+    [SerializeField] private BounceEffect questList;
+
+    [SerializeField] private GameObject mainPausePage;
+
+    [SerializeField] private GameObject confirmPausePage;
     private Transform playerBuildingExitPos;
 
     private GameObject currentBuilding;
@@ -47,7 +57,11 @@ public class GameManager : MonoBehaviour
         {
             if (IsGamePaused())
             {
-                UnPauseGame();
+                if (confirmPausePage.activeSelf)
+                {
+                    HideConfirmPage();
+                }
+                else UnPauseGame();
             }
             else PauseGame();
         }
@@ -113,5 +127,24 @@ public class GameManager : MonoBehaviour
         EnablePlayer();
         player.transform.position = playerBuildingExitPos.position;
         player.transform.rotation = playerBuildingExitPos.rotation;
+    }
+
+    public void FinishQuest()
+    {
+        questUpdates.SetActive(true);
+        questText.text = "- Now feel free to roam the Demo Village";
+        questList.Bounce();
+    }
+
+    public void HideConfirmPage()
+    {
+        confirmPausePage.SetActive(false);
+        mainPausePage.SetActive(true);
+    }
+
+    public void ShowConfirmPage()
+    {
+        confirmPausePage.SetActive(true);
+        mainPausePage.SetActive(false);
     }
 }
