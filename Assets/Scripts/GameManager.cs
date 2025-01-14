@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,13 +22,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private AudioSource bgMusic;
 
-    [SerializeField] GameObject player;
+    [SerializeField] private GameObject player;
 
-    [SerializeField] GameObject followCamera;
+    [SerializeField] private GameObject followCamera;
+
+    [SerializeField] private GameObject villageMap;
+
+    [SerializeField] private GameObject churchInterior;
 
     private Transform playerBuildingExitPos;
 
-    private string currentBuilding;
+    private GameObject currentBuilding;
 
     // Start is called before the first frame update
     void Start()
@@ -91,18 +96,22 @@ public class GameManager : MonoBehaviour
         followCamera.SetActive(true);
     }
 
-    public void EnterBuilding(string buildingSceneName, Transform exitPosition)
+
+    public void EnterBuilding(GameObject building, Transform exitPosition)
     {
-        SceneManager.LoadScene(buildingSceneName, LoadSceneMode.Additive);
+        building.SetActive(true);
+        villageMap.SetActive(false);
         playerBuildingExitPos = exitPosition;
-        currentBuilding = buildingSceneName;
+        currentBuilding = building;
         DisablePlayer();
     }
 
     public void ExitBuilding()
     {
-        SceneManager.UnloadSceneAsync(currentBuilding);
+        currentBuilding.SetActive(false);
+        villageMap.SetActive(true);
         EnablePlayer();
         player.transform.position = playerBuildingExitPos.position;
+        player.transform.rotation = playerBuildingExitPos.rotation;
     }
 }

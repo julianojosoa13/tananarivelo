@@ -6,6 +6,8 @@ public class Billboard : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private BillboardType billboardType;
+
+    [SerializeField] private Camera currentCamera;
     public enum BillboardType { LookAtCamera, CameraForward };
 
 
@@ -14,12 +16,12 @@ public class Billboard : MonoBehaviour
         switch (billboardType)
         {
             case BillboardType.LookAtCamera:
-                transform.LookAt(Camera.main.transform.position, Vector3.up);
+                transform.LookAt(currentCamera.transform.position, Vector3.up);
                 transform.Rotate(new Vector3(0, 0, 180));
                 break;
 
             case BillboardType.CameraForward:
-                transform.forward = Camera.main.transform.forward;
+                transform.forward = currentCamera.transform.forward;
                 transform.Rotate(new Vector3(0, 0, 180));
                 break;
 

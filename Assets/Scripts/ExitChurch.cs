@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class EnterChurch : MonoBehaviour, IInteractable
+public class ExitChurch : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
     [SerializeField] private GameManager gameManager;
 
-    [SerializeField] private GameObject churchInteriorScene;
 
-    [SerializeField] private Transform exitPos;
+    [SerializeField] private Player playerInside;
+
+    [SerializeField] private Transform initialPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +24,9 @@ public class EnterChurch : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        gameManager.EnterBuilding(churchInteriorScene, exitPos);
+        gameManager.ExitBuilding();
+
+        playerInside.transform.position = initialPos.position;
+        playerInside.transform.rotation = initialPos.rotation;
     }
 }
