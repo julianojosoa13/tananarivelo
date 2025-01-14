@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float turnRate = 7f;
     [SerializeField] private Camera mainCamera; // Reference to the camera
 
+    [SerializeField] private GameObject interactBillboard;
+
     private void Start()
     {
         Debug.Log("Animator is ", animator);
@@ -70,4 +72,15 @@ public class Player : MonoBehaviour
         // Move the player
         transform.position += moveDir * Time.deltaTime * moveSpeed;
     }
+
+    public void ShowInteractBillboard()
+    {
+        interactBillboard.SetActive(true);
+    }
+
+    public void HideInteractBillboard()
+    {
+        interactBillboard.SetActive(false);
+    }
+
 }

@@ -1053,7 +1053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7156779268351617701}
   m_Layer: 0
-  m_Name: ChurchInterior
+  m_Name: ChurchInteriorPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

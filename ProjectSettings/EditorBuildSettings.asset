@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Village.unity
     guid: 7afb3ada9faf28831b2ca52de3624848
   - enabled: 1
-    path: Assets/Scenes/ChurchInteriorScene.unity
+    path: Assets/Scenes/ChurchInterior.unity
     guid: 5d129a13042176c6d898a5e26aa49ddf
   m_configObjects: {}

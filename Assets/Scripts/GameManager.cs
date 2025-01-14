@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,6 +20,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private AudioSource bgMusic;
+
+    [SerializeField] GameObject player;
+
+    [SerializeField] GameObject followCamera;
+
+    private Transform playerBuildingExitPos;
+
+    private string currentBuilding;
 
     // Start is called before the first frame update
     void Start()
@@ -68,5 +77,32 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadSceneAsync("MainMenu");
+    }
+
+    public void DisablePlayer()
+    {
+        player.SetActive(false);
+        followCamera.SetActive(false);
+    }
+
+    public void EnablePlayer()
+    {
+        player.SetActive(true);
+        followCamera.SetActive(true);
+    }
+
+    public void EnterBuilding(string buildingSceneName, Transform exitPosition)
+    {
+        SceneManager.LoadScene(buildingSceneName, LoadSceneMode.Additive);
+        playerBuildingExitPos = exitPosition;
+        currentBuilding = buildingSceneName;
+        DisablePlayer();
+    }
+
+    public void ExitBuilding()
+    {
+        SceneManager.UnloadSceneAsync(currentBuilding);
+        EnablePlayer();
+        player.transform.position = playerBuildingExitPos.position;
     }
 }
